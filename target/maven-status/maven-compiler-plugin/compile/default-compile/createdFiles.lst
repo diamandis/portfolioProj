@@ -1,0 +1,7 @@
+br\com\biblioteca\model\Pessoa.class
+br\com\biblioteca\model\Status.class
+br\com\biblioteca\data\ProjetoRepository.class
+br\com\biblioteca\model\Projeto.class
+br\com\biblioteca\model\Risco.class
+br\com\biblioteca\controller\IndexController.class
+br\com\biblioteca\MainServer.class
