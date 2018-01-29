@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap-3.5.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-3.5.5-dist/css/bootstrap.min.css">
 
     <title>Projetos</title>
   </head>
@@ -52,10 +52,14 @@
             </c:forEach>
             </div>
             </div>
-            
+            <section>
+            	<div>
+            		<a href="${pageContext.request.contextPath}/novo">Novo Projeto</a>
+            	</div>
+            </section>
             
     </main>
-    <script src="static/lib/jquery-1.1.1.min.js"></script>
-    <script src="static/bootstrap-3.5.5-dist/js/bootstrap.min.js"></script>
+    <script src="/static/lib/jquery-1.1.1.min.js"></script>
+    <script src="/static/bootstrap-3.5.5-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

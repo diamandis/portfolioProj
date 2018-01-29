@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.biblioteca.data.MembroRepository;
 import br.com.biblioteca.data.PessoaRepository;
+import br.com.biblioteca.model.Membro;
 import br.com.biblioteca.model.Pessoa;
 
 @RestController
@@ -17,6 +19,8 @@ import br.com.biblioteca.model.Pessoa;
 public class MembroController {
 	@Autowired
 	private PessoaRepository repository;
+	@Autowired
+	private MembroRepository repositoryMembros;
 	
 	//cadastro de novos funcionarios
 	@RequestMapping(value="/novo",method = RequestMethod.POST)
@@ -31,11 +35,15 @@ public class MembroController {
 	
 	//associação de funcionário a projeto
 	@RequestMapping(value="/addEmProjeto/{id}",method = RequestMethod.POST)
-	ResponseEntity<?> add(@PathVariable int id, @RequestBody Pessoa membro) {
+	ResponseEntity<?> add(@PathVariable Long id, @RequestBody Pessoa membro) {
 		if(!membro.isFuncionario()) {
 			return new ResponseEntity<>(null, HttpStatus.NOT_ACCEPTABLE);
 		}
-		return null;
+		if(repositoryMembros.save(new Membro(id,membro.getId())) != null) {
+			return new ResponseEntity<>(null, HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
     }
 
 }

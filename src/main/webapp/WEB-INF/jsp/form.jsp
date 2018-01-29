@@ -13,34 +13,31 @@
 		action="${pageContext.request.contextPath}/salvar"
 		modelAttribute="projeto">
 		<label>Nome:</label>
-		<form:input path="projeto.nomeProjeto" />
+		<form:input path="nomeProjeto" />
 		<label>Data de Início:</label>
-		<form:input path="projeto.dataInicio" />
+		<form:input path="dataInicio" />
 		<label>Data Prevista para Conclusão:</label>
-		<form:input path="projeto.dataPrevista" />
+		<form:input path="dataPrevista" />
 		<label>Data da Finalização:</label>
-		<form:input path="projeto.dataFim" />
+		<form:input path="dataFim" />
 		<label>Orçamento:</label>
-		<form:input path="projeto.orcamento" />
+		<form:input path="orcamento" />
 		<label>Status:</label>
-		<form:select path="projeto.status" />
+		<form:select path="status">
+			<form:option value="status" />
+			<form:options items="${status}" />
+		</form:select>
 		<label>Risco:</label>
-		<form:select path="projeto.risco">
-			<form:option value="projeto.risco" />
+		<form:select path="risco">
+			<form:option value="risco" />
 			<form:options items="${risco}" />
 		</form:select>
 		<label>Gerente:</label>
-		<form:select path="projeto.gerente">
-			<form:option value="projeto.gerente.nomePessoa" />
+		<form:select path="gerente">
+			<form:option value="gerente.nomePessoa" />
 			<form:options items="${funcionarios}" />
 		</form:select>
-
-
-
-
-
-
-		<input type="submit" value="Submit" />
+		<input type="submit" value="Salvar" />
 	</form:form>
 </body>
 </html>
