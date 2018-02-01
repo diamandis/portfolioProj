@@ -29,11 +29,11 @@ public class Projeto {
 	@Column(name="descricao")
 	private String descricao;
 	@Column(name="status")
-	private String status;
+	private Status status;
 	@Column(name="orcamento")
 	private BigDecimal orcamento;
 	@Column(name="risco")
-	private String risco;
+	private Risco risco;
 	
 	@JoinColumn(name="idgerente")
 	@ManyToOne
@@ -75,10 +75,10 @@ public class Projeto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	public BigDecimal getOrcamento() {
@@ -87,10 +87,10 @@ public class Projeto {
 	public void setOrcamento(BigDecimal orcamento) {
 		this.orcamento = orcamento;
 	}
-	public String getRisco() {
+	public Risco getRisco() {
 		return risco;
 	}
-	public void setRisco(String risco) {
+	public void setRisco(Risco risco) {
 		this.risco = risco;
 	}
 	public Pessoa getGerente() {

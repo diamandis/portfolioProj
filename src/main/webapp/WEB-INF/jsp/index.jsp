@@ -6,13 +6,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/static/bootstrap-3.5.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/index.css">
 
     <title>Projetos</title>
   </head>
   <body>
   <header>     
-      <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="navbar navbar-default box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
             <strong>Projetos</strong>
@@ -22,7 +23,6 @@
     </header>
 
     <main role="main">
-
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Projetos</h1>          
@@ -40,10 +40,10 @@
                   <p class="card-text">${i.descricao}</p>                  
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
+                    	<span class="label label-primary">{i.status}</span>
+                    	<span class="label label-info">{i.risco}</span>
+                   	</div>
+                    <a type="button" href="${pageContext.request.contextPath}/edit/${i.id}" class="btn btn-sm">View</a>                      
                   </div>
                 </div>
               </div>
@@ -53,13 +53,13 @@
             </div>
             </div>
             <section>
-            	<div>
+            	<div class="container">
             		<a href="${pageContext.request.contextPath}/novo">Novo Projeto</a>
             	</div>
             </section>
             
     </main>
-    <script src="/static/lib/jquery-1.1.1.min.js"></script>
-    <script src="/static/bootstrap-3.5.5-dist/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/lib/jquery-1.1.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/bootstrap-3.5.5-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

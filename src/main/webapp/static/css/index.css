@@ -27,13 +27,20 @@
   max-width: 40rem;
 }
 
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
-}
-
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.container {
+	max-width: 1028px;
+	margin-left: auto;
+	margin-right:auto;
+	padding-right:15px;
+	padding-left:15px;
+}
+
+textarea {
+   resize: none;
+}
+
+.navbar-default {
+	background-color: #333;
+}
