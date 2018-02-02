@@ -27,4 +27,12 @@ public class ProjetoService {
 	public Projeto findById(Long id) {
 		return repository.findById(id);
 	}
+	
+	public void delete(Projeto p) throws IllegalArgumentException {
+		if(p.getStatus().name().equals("Iniciado") || p.getStatus().name().equals("Em andamento") || p.getStatus().name().equals("Encerrado")) {
+			throw new IllegalArgumentException("Projeto não pode ser excluído durante esta etapa.");
+		} else {
+			repository.delete(p);
+		}
+	}
 }

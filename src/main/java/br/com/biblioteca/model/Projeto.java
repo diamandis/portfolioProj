@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="projeto")
 public class Projeto {
@@ -21,10 +23,13 @@ public class Projeto {
 	@Column(name="nome")
 	private String nomeProjeto;
 	@Column(name="data_inicio")
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date dataInicio;
 	@Column(name="data_previsao_fim")
+	@DateTimeFormat(pattern="dd/MM/yyyy")	
 	private Date dataPrevista;
 	@Column(name="data_fim")
+	@DateTimeFormat(pattern="dd/MM/yyyy")	
 	private Date dataFim;
 	@Column(name="descricao")
 	private String descricao;

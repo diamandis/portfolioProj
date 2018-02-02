@@ -1,6 +1,5 @@
 package br.com.biblioteca.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name="pessoa")
@@ -23,6 +24,7 @@ public class Pessoa {
 	@Column(name="nome")
 	private String nomePessoa;
 	@Column(name="datanascimento")
+	@DateTimeFormat(pattern="dd/MM/yyyy")	
 	private Date dataNascimento;
 	@Column(name="cpf")
 	private String cpf;

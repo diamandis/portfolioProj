@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +16,7 @@
   <header>     
       <div class="navbar navbar-default box-shadow">
         <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
+          <a href="${pageContext.request.contextPath}/index" class="navbar-brand d-flex align-items-center">
             <strong>Projetos</strong>
           </a>          
         </div>
@@ -31,19 +32,21 @@
 
       <div class="album py-5 bg-light">
         <div class="container">
+        <a class="btn btn-default" role="button" href="${pageContext.request.contextPath}/novo">Novo Projeto</a>
 		<c:forEach items="${projetos}" var="i">
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
-                  <p class="card-text">${i.nomeProjeto}</p>
-                  <p class="card-text">${i.descricao}</p>                  
+                  <h3>${i.nomeProjeto}</h3>
+                  <p class="card-text">${i.descricao}</p><a href="${pageContext.request.contextPath}/edit/${i.id}" role="button" class="btn btn-default btn-sm">View</a>             
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    	<span class="label label-primary">{i.status}</span>
-                    	<span class="label label-info">{i.risco}</span>
+                    	<span class="label label-primary">${i.status.descricao}</span>
+                    	<span class="label label-info">${i.risco.descricao}</span>
                    	</div>
-                    <a type="button" href="${pageContext.request.contextPath}/edit/${i.id}" class="btn btn-sm">View</a>                      
+                   	<small class="text-muted">Previsto para: <fmt:formatDate pattern = "dd-MM-yyyy" value="${i.dataPrevista}"/></small>
+                                          
                   </div>
                 </div>
               </div>
@@ -51,12 +54,7 @@
             </div>
             </c:forEach>
             </div>
-            </div>
-            <section>
-            	<div class="container">
-            		<a href="${pageContext.request.contextPath}/novo">Novo Projeto</a>
-            	</div>
-            </section>
+            </div>            
             
     </main>
     <script src="${pageContext.request.contextPath}/static/lib/jquery-1.1.1.min.js"></script>
