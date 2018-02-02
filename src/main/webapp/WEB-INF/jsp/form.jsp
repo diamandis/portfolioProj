@@ -22,9 +22,9 @@
 				</a>
 			</div>
 		</div>
-	</header>
-	<h1 class="jumbotron-heading">Novo Projeto</h1>
+	</header>	
 	<div class="form-group">
+	<h1 class="jumbotron-heading">Novo Projeto</h1>
 		<form:form method="POST"
 			action="${pageContext.request.contextPath}/novo"
 			modelAttribute="projeto">

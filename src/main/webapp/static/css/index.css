@@ -35,7 +35,7 @@ body {
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
-.container {
+.container, .form-group {
 	max-width: 960px;
 	margin-left: auto;
 	margin-right:auto;
@@ -44,14 +44,18 @@ body {
 }
 
 .card {
-	width: 220px;
 	display: flex;
 	flex-direction: column;
 	background-color: #fff;
+	max-width: 290px;
 }
 
 .card-body {
 	padding: 20px;
+}
+
+.card-text {
+	text-align:justify;
 }
 
 textarea {
@@ -65,4 +69,10 @@ textarea {
 .col-md-4 {
 	padding-right:15px;
 	padding-left:15px;
+	float:left;
+	margin-top: 15px;
+}
+
+.btn-sm {
+	float:right;
 }
